@@ -1,0 +1,80 @@
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  height: 60px;
+  gap: 8px;
+}
+
+.toggle-title-container {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 16px;
+  gap: 2px;
+}
+
+.toggle-title {
+  height: 16px;
+  display: inline-block;
+
+  /* font-family: Noto Sans KR; */
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #6B6B6B;
+}
+
+.toggle-title-asterisk {
+  width: 6px;
+  height: 14px;
+  display: inline-block;
+
+  /* font-family: Noto Sans KR; */
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #FF0000;
+}
+
+.toggle-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: 20px;
+  gap: 21px;
+}
+
+.toggle-set {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.toggle-text{
+  width: auto;
+  height: 16px;
+
+  /* font-family: Noto Sans KR; */
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #6B6B6B;
+}
+
+button{
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
