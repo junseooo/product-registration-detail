@@ -20,7 +20,7 @@ function App() {
             <Toggle title={'과세구분'} firstText={'과세'} secondText={'비과세'}/>
             <Selector title={'재고단위'} need={true}/>
             <Selector title={'발주단위'} need={false}/>
-            <Print title={'재고환산'} content={'1.0'}/>
+            <Print title={'재고환산'}/>
           </div>
         </div>
       </div>

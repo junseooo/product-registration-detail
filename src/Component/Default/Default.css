@@ -68,6 +68,21 @@
   border: 1px solid #E3E3E3;
 }
 
+.default-box-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+
+  /* font-family: Noto Sans KR; */
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #737373;
+}
+
 .default-box-content {
   /* font-family: Noto Sans KR; */
   font-size: 11px;
