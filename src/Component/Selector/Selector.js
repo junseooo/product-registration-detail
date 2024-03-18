@@ -4,9 +4,9 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 
 function Selector(props) {
   const { title, need } = props;
-  const arrow = <MdKeyboardArrowDown />;
+  const arrow = <MdKeyboardArrowDown className='arrow-icon' />;
   return (
-    <Default title={title} need={need} arrow={arrow}/>
+    <Default title={title} need={need} arrow={arrow} />
   );
 }
 
