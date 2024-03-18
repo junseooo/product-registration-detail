@@ -2,3 +2,48 @@
   width: 24px;
   height: 24px;
 }
+
+.select-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.select-container {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* background: url('https://react-icons.github.io/react-icons/search/#q=MdKeyboardArrowDown') calc(100% - 5px) center no-repeat;
+  background-size: 24px;
+  padding: 5px 30px 5px 10px;
+  border-radius: 4px;
+  outline: 0 none; */
+
+  /* font-family: Noto Sans KR; */
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #737373;
+}
+
+select::-ms-expand { 
+	display: none;
+}
+
+.select-text {
+  /* font-family: Noto Sans KR; */
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #737373;
+}
