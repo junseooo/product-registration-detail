@@ -15,15 +15,13 @@
   background-color: transparent;
   width: 100%;
 
-  -o-appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  /* background: url('https://react-icons.github.io/react-icons/search/#q=MdKeyboardArrowDown') calc(100% - 5px) center no-repeat;
+  background-image: url('../../Icon/ArrowDown.png');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
   background-size: 24px;
-  padding: 5px 30px 5px 10px;
-  border-radius: 4px;
-  outline: 0 none; */
 
   /* font-family: Noto Sans KR; */
   font-size: 11px;

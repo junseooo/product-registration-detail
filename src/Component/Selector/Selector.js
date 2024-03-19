@@ -1,8 +1,5 @@
 import './Selector.css';
 import Default from '../Default';
-// import { MdKeyboardArrowDown } from 'react-icons/md';
-// import Select from '@mui/material/Select';
-// import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 
 function Selector(props) {
@@ -12,8 +9,6 @@ function Selector(props) {
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
-  // const arrow = <MdKeyboardArrowDown className='arrow-icon' />;
 
   function arrow() {
     return (
