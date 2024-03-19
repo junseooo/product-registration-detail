@@ -39,33 +39,33 @@ const SelectBody = styled.div`
   height: 26px;
 `
 
-const SelectBodyContainer = styled.select`
-  border: none;
-  outline: none;
-  background-color: transparent;
-  width: 100%;
-  height: 26px;
+// const SelectBodyContainer = styled.select`
+//   border: none;
+//   outline: none;
+//   background-color: transparent;
+//   width: 100%;
+//   height: 26px;
 
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('../../Icon/ArrowDown.png');
-  background-repeat: no-repeat;
-  background-position: calc(100% - 10px) center;
-  background-size: 24px;
+//   appearance: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   background-image: url('../../Icon/ArrowDown.png');
+//   background-repeat: no-repeat;
+//   background-position: calc(100% - 10px) center;
+//   background-size: 24px;
 
-  /* font-family: Noto Sans KR; */
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 16px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #737373;
+//   /* font-family: Noto Sans KR; */
+//   font-size: 11px;
+//   font-weight: 700;
+//   line-height: 16px;
+//   letter-spacing: 0em;
+//   text-align: left;
+//   color: #737373;
 
-  &::-ms-expand {
-    display: none;
-  }
-`
+//   &::-ms-expand {
+//     display: none;
+//   }
+// `
 
 const SelectText = styled.option`
   /* font-family: Noto Sans KR; */

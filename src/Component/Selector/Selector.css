@@ -27,8 +27,8 @@
   color: #737373;
 }
 
-select::-ms-expand { 
-	display: none;
+select::-ms-expand {
+  display: none;
 }
 
 .select-text {
