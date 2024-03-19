@@ -1,3 +1,7 @@
+div {
+  box-sizing: border-box;
+}
+
 .default-container {
   display: flex;
   flex-direction: column;
@@ -29,7 +33,6 @@
 }
 
 .default-title-asterisk {
-  width: 6px;
   height: 14px;
   display: inline-block;
 

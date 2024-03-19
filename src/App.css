@@ -15,6 +15,15 @@ div {
   justify-content: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: auto;
+  padding: 16px 0px 25px 0px;
+  gap: 30px;
+}
+
 .title {
   width: 89px;
   height: 31px;
@@ -25,16 +34,6 @@ div {
   line-height: 31px;
   letter-spacing: 0em;
   text-align: center;
-
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: auto;
-  padding: 16px 0px 25px 0px;
-  gap: 30px;
 }
 
 .contents {
