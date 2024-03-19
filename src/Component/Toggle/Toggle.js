@@ -3,6 +3,63 @@ import { MdCheckCircle, MdOutlineCircle } from 'react-icons/md';
 import { useState } from 'react';
 import styled from 'styled-components';
 
+function Toggle(props) {
+  const { title, firstText, secondText } = props;
+  const [firstToggle, setFirstToggle] = useState(false);
+  const [secondToggle, setSecondToggle] = useState(false);
+
+  const handleFirstToggleClick = () => {
+    if (!firstToggle && !secondToggle) {
+      setFirstToggle(true);
+    }
+    else if (firstToggle && !secondToggle) {
+      setFirstToggle(false);
+    }
+    else if (!firstToggle && secondToggle) {
+      setFirstToggle(true);
+      setSecondToggle(false);
+    }
+  };
+
+  const handleSecondToggleClick = () => {
+    if (!firstToggle && !secondToggle) {
+      setSecondToggle(true);
+    }
+    else if (firstToggle && !secondToggle) {
+      setFirstToggle(false);
+      setSecondToggle(true);
+    }
+    else if (!firstToggle && secondToggle) {
+      setSecondToggle(false);
+    }
+  };
+
+  return (
+    <ToggleContainer>
+      <ToggleTitleContainer>
+        <ToggleTitle>{title}</ToggleTitle>
+        <ToggleTitleAsterisk>*</ToggleTitleAsterisk>
+      </ToggleTitleContainer>
+      <ToggleBox>
+        <ToggleSet>
+          <ToggleButton onClick={handleFirstToggleClick}>
+            {firstToggle ? <MdCheckCircle className='check-icon' /> : <MdOutlineCircle className='non-check-icon' />}
+          </ToggleButton>
+          <ToggleText>{firstText}</ToggleText>
+        </ToggleSet>
+        <ToggleSet>
+          <ToggleButton onClick={handleSecondToggleClick}>
+            {secondToggle ? <MdCheckCircle className='check-icon' /> : <MdOutlineCircle className='non-check-icon' />}
+          </ToggleButton>
+          <ToggleText>{secondText}</ToggleText>
+        </ToggleSet>
+      </ToggleBox>
+    </ToggleContainer>
+  );
+}
+
+export default Toggle;
+
 const ToggleContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -85,60 +142,3 @@ const ToggleText = styled.span`
   text-align: center;
   color: #6B6B6B;
 `
-
-function Toggle(props) {
-  const { title, firstText, secondText } = props;
-  const [firstToggle, setFirstToggle] = useState(false);
-  const [secondToggle, setSecondToggle] = useState(false);
-
-  const handleFirstToggleClick = () => {
-    if (!firstToggle && !secondToggle) {
-      setFirstToggle(true);
-    }
-    else if (firstToggle && !secondToggle) {
-      setFirstToggle(false);
-    }
-    else if (!firstToggle && secondToggle) {
-      setFirstToggle(true);
-      setSecondToggle(false);
-    }
-  };
-
-  const handleSecondToggleClick = () => {
-    if (!firstToggle && !secondToggle) {
-      setSecondToggle(true);
-    }
-    else if (firstToggle && !secondToggle) {
-      setFirstToggle(false);
-      setSecondToggle(true);
-    }
-    else if (!firstToggle && secondToggle) {
-      setSecondToggle(false);
-    }
-  };
-
-  return (
-    <ToggleContainer>
-      <ToggleTitleContainer>
-        <ToggleTitle>{title}</ToggleTitle>
-        <ToggleTitleAsterisk>*</ToggleTitleAsterisk>
-      </ToggleTitleContainer>
-      <ToggleBox>
-        <ToggleSet>
-          <ToggleButton onClick={handleFirstToggleClick}>
-            {firstToggle ? <MdCheckCircle className='check-icon' /> : <MdOutlineCircle className='non-check-icon' />}
-          </ToggleButton>
-          <ToggleText>{firstText}</ToggleText>
-        </ToggleSet>
-        <ToggleSet>
-          <ToggleButton onClick={handleSecondToggleClick}>
-            {secondToggle ? <MdCheckCircle className='check-icon' /> : <MdOutlineCircle className='non-check-icon' />}
-          </ToggleButton>
-          <ToggleText>{secondText}</ToggleText>
-        </ToggleSet>
-      </ToggleBox>
-    </ToggleContainer>
-  );
-}
-
-export default Toggle;

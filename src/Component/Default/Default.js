@@ -2,6 +2,62 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
+function Default(props) {
+  const { title, need, arrow, unit, comment } = props;
+  const [name, setName] = useState('');
+  const [money, setMoney] = useState('');
+  const [count, setCount] = useState('');
+
+  const handleName = (e) => {
+    setName(e.target.value);
+  }
+
+  const handleMoneyChange = (e) => {
+    const value = e.target.value;
+    const removedCommaValue = Number(value.replaceAll(",", ""));
+    setMoney(removedCommaValue.toLocaleString());
+  };
+
+  const handleCount = (e) => {
+    setCount(e.target.value);
+  }
+
+  function inBoxContent() {
+    if (title === '대분류' || title === '중분류' || title === '재고단위' || title === '발주단위') {
+      return arrow;
+    }
+    else if (title === '상품코드') {
+      return <DefaultBoxInput as='span'>blank</DefaultBoxInput>;
+    }
+    else if (title === '상품명') {
+      return <DefaultBoxInput as='input' type='text' value={name} onChange={handleName} />;
+    }
+    else if (title === '판매단가') {
+      return <DefaultBoxInput as='input' type='text' value={money} onChange={handleMoneyChange} />;
+    }
+    else if (title === '재고환산') {
+      return <DefaultBoxInput as='input' type='number' value={count} onChange={handleCount} placeholder='1.0' />;
+    }
+  }
+
+  return (
+    <DefaultContainer>
+      <DefaultTitleContainer>
+        <DefaultTitle>{title}</DefaultTitle>
+        {need && <DefaultTitleAsterisk>*</DefaultTitleAsterisk>}
+        {comment && <DefaultTitleComment>{comment}</DefaultTitleComment>}
+      </DefaultTitleContainer>
+      <DefaultBox>
+        {inBoxContent()}
+        {unit && <DefaultBoxUnit>{unit}</DefaultBoxUnit>}
+      </DefaultBox>
+    </DefaultContainer>
+  );
+}
+
+export default Default;
+
+
 const DefaultContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,57 +154,3 @@ const DefaultBoxUnit = styled.span`
   text-align: left;
   color: #737373;
 `
-function Default(props) {
-  const { title, need, arrow, unit, comment } = props;
-  const [name, setName] = useState('');
-  const [money, setMoney] = useState('');
-  const [count, setCount] = useState('');
-
-  const handleName = (e) => {
-    setName(e.target.value);
-  }
-
-  const handleMoneyChange = (e) => {
-    const value = e.target.value;
-    const removedCommaValue = Number(value.replaceAll(",", ""));
-    setMoney(removedCommaValue.toLocaleString());
-  };
-
-  const handleCount = (e) => {
-    setCount(e.target.value);
-  }
-
-  function inBoxContent() {
-    if (title === '대분류' || title === '중분류' || title === '재고단위' || title === '발주단위') {
-      return arrow;
-    }
-    else if (title === '상품코드') {
-      return <DefaultBoxInput as='span'>blank</DefaultBoxInput>;
-    }
-    else if (title === '상품명') {
-      return <DefaultBoxInput as='input' type='text' value={name} onChange={handleName} />;
-    }
-    else if (title === '판매단가') {
-      return <DefaultBoxInput as='input' type='text' value={money} onChange={handleMoneyChange} />;
-    }
-    else if (title === '재고환산') {
-      return <DefaultBoxInput as='input' type='number' value={count} onChange={handleCount} placeholder='1.0' />;
-    }
-  }
-
-  return (
-    <DefaultContainer>
-      <DefaultTitleContainer>
-        <DefaultTitle>{title}</DefaultTitle>
-        {need && <DefaultTitleAsterisk>*</DefaultTitleAsterisk>}
-        {comment && <DefaultTitleComment>{comment}</DefaultTitleComment>}
-      </DefaultTitleContainer>
-      <DefaultBox>
-        {inBoxContent()}
-        {unit && <DefaultBoxUnit>{unit}</DefaultBoxUnit>}
-      </DefaultBox>
-    </DefaultContainer>
-  );
-}
-
-export default Default;
